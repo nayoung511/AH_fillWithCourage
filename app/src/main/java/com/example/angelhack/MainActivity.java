@@ -1,6 +1,7 @@
 package com.example.angelhack;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,10 +12,16 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.ClipData;
+import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -25,21 +32,67 @@ import com.google.android.material.snackbar.Snackbar;
 
 import javax.annotation.Nonnull;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity{
+    NavigationView navigationView;
+    DrawerLayout drawerLayout;
+    Toolbar toolbar;
+    View drawerView;
+    ImageView btn_category;
+
+    ActionBarDrawerToggle barDrawerToggle;
+
+    private AppBarConfiguration mAppBarConfiguration;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btn_category = findViewById(R.id.btn_category);
 
-        ImageView btn_category = findViewById(R.id.btn_category);
+        btn_category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout = findViewById(R.id.drawer_layout);
+                if(!drawerLayout.isDrawerOpen(Gravity.LEFT)){
+                    drawerLayout.openDrawer(Gravity.LEFT);
+                }
+            }
+        });
+
+        navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_challenge_list: //도전과제 목록
+                        mystartActivity(ChallengeActivity.class);
+                        break;
+                    case R.id.nav_rank:  //랭킹
+                        mystartActivity(RankingActivity.class);
+                        break;
+                    case R.id.nav_pointshop:  //포인트 상점
+                        mystartActivity(PointShopActivity.class);
+                        break;
+                    case R.id.nav_my_challenge: //나의 도전과제
+                        mystartActivity(MyChallengeActivity.class);
+                        break;
+                    case R.id.nav_my_page:   //마이 페이지
+                        mystartActivity(MyPageActivity.class);
+                        break;
+                }
+                drawerLayout.closeDrawer(navigationView);
+                return false;
+            }
+        });
 
     }
-
 
     private void startToast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
+
+
 
 
     //go to c activity
@@ -49,23 +102,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()){
-            case R.id.nav_challenge_list: //도전과제 목록
-                mystartActivity(ChallengeActivity.class);
-            case R.id.nav_rank:  //랭킹
-                mystartActivity(RankingActivity.class);
-            case R.id.nav_pointshop:  //포인트 상점
-                mystartActivity(PointShopActivity.class);
-            case R.id.nav_my_challenge: //나의 도전과제
-                mystartActivity(MyChallengeActivity.class);
-            case R.id.nav_my_page:   //마이 페이지
-                mystartActivity(MyPageActivity.class);
-        }
-
-        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }
