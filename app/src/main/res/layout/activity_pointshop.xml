@@ -1,7 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/challenge_list_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/btn_category"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_menu"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/title_challenge_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="포인트 상점"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:layout_marginRight="60dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pointshop_top_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/challenge_list_top"
+        android:paddingLeft="20dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_search"/>
+
+        <EditText
+            android:id="@+id/search_shop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="상점을 검색해보세요"
+            android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="610dp"
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/pointshop_top_search">
+
+        <LinearLayout
+            android:id="@+id/challenge_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/challenge_subbox"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#f9f7f3">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="5dp"
+                    android:elevation="10dp"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/sample_restaurant"
+                        android:layout_gravity="center"
+                        android:background="#ffffff"
+                        android:scaleType="centerCrop"/>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="가게 이름1"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="25sp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#0075e1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="XXX 음식 구매시 10% 할인"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100 포인트"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="15dp"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/challenge_subbox_2"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#f9f7f3">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="5dp"
+                    android:elevation="10dp"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/sample_restaurant"
+                        android:layout_gravity="center"
+                        android:background="#ffffff"
+                        android:scaleType="centerCrop"/>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="가게 이름1"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="25sp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#0075e1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="XXX 음식 구매시 10% 할인"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100 포인트"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="15dp"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/challenge_subbox_3"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#f9f7f3">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="5dp"
+                    android:elevation="10dp"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/sample_restaurant"
+                        android:layout_gravity="center"
+                        android:background="#ffffff"
+                        android:scaleType="centerCrop"/>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="가게 이름1"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="25sp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#0075e1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="XXX 음식 구매시 10% 할인"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100 포인트"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="15dp"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/challenge_subbox_4"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#f9f7f3">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="5dp"
+                    android:elevation="10dp"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/sample_restaurant"
+                        android:layout_gravity="center"
+                        android:background="#ffffff"
+                        android:scaleType="centerCrop"/>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="가게 이름1"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="25sp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#0075e1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="XXX 음식 구매시 10% 할인"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100 포인트"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="15dp"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
