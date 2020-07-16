@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/challenge_list_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/btn_category"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_menu"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/title_challenge_detail_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="도전과제 이름"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:layout_marginRight="60dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/challenge_list_top">
+
+        <LinearLayout
+            android:id="@+id/challenge_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/challenge_subbox"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#f9f7f3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="도전과제 이름"
+                    android:textSize="25sp"
+                    android:textColor="#0075e1"
+                    android:paddingTop="20dp"
+                    android:paddingLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="15dp"
+                    android:paddingLeft="10dp"
+                    android:text="도전과제 설명\n아래 이미지처럼 사진 업로드 시 합격!"/>
+
+                <ImageView
+                    android:id="@+id/exp_img"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:src="@mipmap/green_earth"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"
+                    android:paddingLeft="10dp"
+                    android:text="도전과제 설명\n아래 이미지처럼 사진 업로드 시 합격!"/>
+
+                <LinearLayout
+                    android:id="@+id/participant_challenge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="10dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_launcher_background"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="참가자 이름_1"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="10dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/participant_challenge_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="10dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_launcher_background"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="참가자 이름_2"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="10dp"/>
+
+
+                </LinearLayout>
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="참가하기"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

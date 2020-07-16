@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_challenge_list"
+            android:icon="@drawable/ic_challenge"
+            android:title="도전과제 목록" />
+        <item
+            android:id="@+id/nav_rank"
+            android:icon="@drawable/ic_rank"
+            android:title="랭킹" />
+        <item
+            android:id="@+id/nav_pointshop"
+            android:icon="@drawable/ic_pointshop"
+            android:title="포인트 상점" />
+    </group>
+
+    <item android:title="퍼스날">
+        <menu>
+            <item android:id="@+id/nav_my_challenge"
+                android:icon="@drawable/ic_my_challenge"
+                android:title="나의 도전과제"/>
+
+            <item android:id="@+id/nav_my_page"
+                android:icon="@drawable/ic_my_page"
+                android:title="마이페이지"/>
+        </menu>
+    </item>
+</menu>
