@@ -35,14 +35,7 @@ import javax.annotation.Nonnull;
 public class MainActivity extends AppCompatActivity{
     NavigationView navigationView;
     DrawerLayout drawerLayout;
-    Toolbar toolbar;
-    View drawerView;
     ImageView btn_category;
-
-    ActionBarDrawerToggle barDrawerToggle;
-
-    private AppBarConfiguration mAppBarConfiguration;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

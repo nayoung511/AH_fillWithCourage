@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -15,16 +14,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MyChallengeActivity extends AppCompatActivity {
+public class ChallengeStartActivity extends AppCompatActivity {
+
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     ImageView btn_category;
-    Button challenge_start;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mychallenge);
+        setContentView(R.layout.activity_challengestart);
 
         //category
         ImageView category = findViewById(R.id.btn_category);
@@ -61,14 +60,6 @@ public class MyChallengeActivity extends AppCompatActivity {
                 }
                 drawerLayout.closeDrawer(navigationView);
                 return false;
-            }
-        });
-
-
-        challenge_start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mystartActivity(ChallengeStartActivity.class);
             }
         });
     }

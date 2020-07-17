@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".DrawerActivity2"
-            android:label="@string/title_activity_drawer2"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
             android:name=".DrawerActivity"
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -30,6 +25,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MyPageActivity" />
         <activity android:name=".ChallengeActivity" />
+        <activity android:name=".ChallengeStartActivity"/>
+        <activity android:name=".PointShopActivity"/>
     </application>
 
 </manifest>
