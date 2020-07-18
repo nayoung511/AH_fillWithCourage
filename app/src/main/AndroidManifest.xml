@@ -27,6 +27,12 @@
         <activity android:name=".ChallengeActivity" />
         <activity android:name=".ChallengeStartActivity"/>
         <activity android:name=".PointShopActivity"/>
+        <activity android:name=".RankingActivity"/>
+        <activity android:name=".ChallengeDetailActivity"/>
+        <activity android:name=".ChallengeCheckActivity"/>
     </application>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
 </manifest>

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".MyPageActivity">
 
     <LinearLayout
         android:id="@+id/my_page_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:paddingTop="10dp">
 
         <ImageView
@@ -26,7 +28,7 @@
             android:text="마이페이지"
             android:textAlignment="center"
             android:textSize="25dp"
-            android:layout_marginRight="60dp"/>
+            android:layout_marginRight="60dp" />
     </LinearLayout>
 
 
@@ -35,7 +37,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/my_page_top"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="70dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -67,7 +69,7 @@
         android:layout_marginTop="30dp"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -93,7 +95,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -103,12 +105,13 @@
                     android:text="경험치: "
                     android:textSize="20sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <ProgressBar
+                    android:id="@+id/exp_bar"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="30%"
-                    android:textSize="20sp" />
-
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="100"
+                    android:layout_gravity="center"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -134,4 +137,14 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

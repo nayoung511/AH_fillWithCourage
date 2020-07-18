@@ -80,14 +80,19 @@ public class DrawerActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()){
                     case R.id.nav_challenge_list: //도전과제 목록
                         mystartActivity(ChallengeActivity.class);
+                        break;
                     case R.id.nav_rank:  //랭킹
                         mystartActivity(RankingActivity.class);
+                        break;
                     case R.id.nav_pointshop:  //포인트 상점
                         mystartActivity(PointShopActivity.class);
+                        break;
                     case R.id.nav_my_challenge: //나의 도전과제
                         mystartActivity(MyChallengeActivity.class);
+                        break;
                     case R.id.nav_my_page:   //마이 페이지
                         mystartActivity(MyPageActivity.class);
+                        break;
                 }
 
                 DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);

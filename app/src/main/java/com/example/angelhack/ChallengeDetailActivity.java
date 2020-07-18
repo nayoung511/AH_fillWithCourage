@@ -25,7 +25,7 @@ public class ChallengeDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_challengedetail);
 
         //category
-        ImageView category = findViewById(R.id.btn_category);
+        ImageView btn_category = findViewById(R.id.btn_category);
         btn_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

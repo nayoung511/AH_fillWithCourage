@@ -25,7 +25,7 @@ public class PointShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pointshop);
 
         //category
-        ImageView category = findViewById(R.id.btn_category);
+        ImageView btn_category = findViewById(R.id.btn_category);
         btn_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

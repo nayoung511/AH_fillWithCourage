@@ -18,21 +18,22 @@ import com.google.android.material.navigation.NavigationView;
 public class ChallengeActivity extends AppCompatActivity {
     NavigationView navigationView;
     DrawerLayout drawerLayout;
-    ImageView btn_category;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pointshop);
+        setContentView(R.layout.activity_challenge);
 
         //category
-        ImageView category = findViewById(R.id.btn_category);
+        ImageView btn_category = findViewById(R.id.btn_category);
         btn_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 drawerLayout = findViewById(R.id.drawer_layout);
                 if(!drawerLayout.isDrawerOpen(Gravity.LEFT)){
                     drawerLayout.openDrawer(Gravity.LEFT);
+                }else{
+                    drawerLayout.closeDrawer(Gravity.LEFT) ;
                 }
             }
         });
@@ -79,7 +80,6 @@ public class ChallengeActivity extends AppCompatActivity {
     private void startToast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
-
 
     //go to c activity
     private void mystartActivity(Class c){

@@ -27,7 +27,7 @@ public class MyChallengeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mychallenge);
 
         //category
-        ImageView category = findViewById(R.id.btn_category);
+        ImageView btn_category = findViewById(R.id.btn_category);
         btn_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +64,8 @@ public class MyChallengeActivity extends AppCompatActivity {
             }
         });
 
-
+    //도전하기 버튼 클릭 시 이동
+        challenge_start = findViewById(R.id.challenge_start);
         challenge_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

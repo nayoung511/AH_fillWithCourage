@@ -17,11 +17,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -42,6 +44,28 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn_category = findViewById(R.id.btn_category);
+
+        //login Activity
+        Button btn_login = findViewById(R.id.btn_login);
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToast("로그인 액티비티");
+                mystartActivity(LoginActivity.class);
+                finish();
+            }
+        });
+
+        //register Activity
+        Button btn_register = findViewById(R.id.btn_register);
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToast("회원가입 액티비티");
+                mystartActivity(RegisterActivity.class);
+                finish();
+            }
+        });
 
         btn_category.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,13 +103,12 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+
     }
 
     private void startToast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
-
-
 
 
     //go to c activity

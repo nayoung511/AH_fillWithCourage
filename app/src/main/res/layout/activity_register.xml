@@ -53,7 +53,8 @@
             android:id="@+id/user_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="30dp"
+            android:inputType="textPassword"/>
 
     </LinearLayout>
 
@@ -73,7 +74,8 @@
             android:id="@+id/user_passwordcheck"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="30dp"
+            android:inputType="textPassword"/>
 
     </LinearLayout>
 
@@ -140,18 +142,23 @@
 
 
         <RadioGroup
+            android:id="@+id/user_type"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="일반 유저" />
+            <RadioButton
+                android:id="@+id/normaluser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="일반 유저" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="소상공인" />
+            <RadioButton
+                android:id="@+id/rest_owner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="소상공인" />
+
+        </RadioGroup>
 
     </LinearLayout>
 

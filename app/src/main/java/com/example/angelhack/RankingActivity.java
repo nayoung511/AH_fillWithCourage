@@ -25,7 +25,7 @@ public class RankingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rank);
 
         //category
-        ImageView category = findViewById(R.id.btn_category);
+        ImageView btn_category = findViewById(R.id.btn_category);
         btn_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
