@@ -28,7 +28,9 @@
             android:text="도전과제 완료 검사"
             android:textAlignment="center"
             android:textSize="25dp"
-            android:layout_marginRight="60dp" />
+            android:layout_marginRight="60dp"
+            android:paddingTop="13dp"
+            android:fontFamily="@font/nanumsquarebold"/>
 
     </LinearLayout>
 
@@ -39,7 +41,7 @@
         android:text="아래 유저가 예시 이미지처럼 도전과제를 완료했나요?\n했다면 성공! 달성하지 못했다면 실패! 버튼을 눌러주세요"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@+id/challenge_check"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="70dp" />
 
     <LinearLayout
         android:id="@+id/sample_img"
@@ -47,13 +49,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_marginTop="120dp">
+        android:layout_marginTop="130dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="도전과제 이름"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textAlignment="center"/>
 
         <ImageView
@@ -70,7 +72,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_marginTop="380dp">
+        android:layout_marginTop="390dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -104,13 +106,22 @@
                 android:id="@+id/btn_success"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="성공"/>
+                android:text="성공"
+                android:fontFamily="@font/nanumsquareregular"
+                android:background="#77c78c"
+                android:textColor="#ffffff"
+                android:textSize="18sp"/>/>
 
             <Button
                 android:id="@+id/btn_fail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="실패"/>
+                android:text="실패"
+                android:fontFamily="@font/nanumsquareregular"
+                android:background="#f67f7f"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp"
+                android:textSize="18sp"/>
 
 
         </LinearLayout>

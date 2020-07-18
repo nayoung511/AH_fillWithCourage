@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="용기를 담아"
             android:textSize="50sp"
-            android:textColor="#85DC40"
+            android:textColor="#1aa94d"
             android:paddingLeft="20dp"
             android:fontFamily="@font/nanumsquarebold"/>
 
@@ -68,7 +68,8 @@
             android:layout_height="wrap_content"
             android:text="용기를 담아가 처음이신가요?"
             android:textAlignment="center"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:fontFamily="@font/nanumsquareregular"/>
 
         <Button
             android:id="@+id/btn_register"
@@ -87,7 +88,8 @@
             android:layout_height="wrap_content"
             android:text="이미 회원이신가요?"
             android:textAlignment="center"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:fontFamily="@font/nanumsquareregular"/>
 
         <Button
             android:id="@+id/btn_login"

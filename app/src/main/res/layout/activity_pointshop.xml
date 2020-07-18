@@ -9,7 +9,7 @@
     tools:context=".PointShopActivity">
 
     <LinearLayout
-        android:id="@+id/challenge_list_top"
+        android:id="@+id/pointshop_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp">
@@ -22,13 +22,15 @@
             android:layout_marginLeft="10dp"/>
 
         <TextView
-            android:id="@+id/title_challenge_list"
+            android:id="@+id/title_pointshop"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="포인트 상점"
             android:textAlignment="center"
             android:textSize="25dp"
-            android:layout_marginRight="60dp"/>
+            android:layout_marginRight="60dp"
+            android:paddingTop="13dp"
+            android:fontFamily="@font/nanumsquarebold"/>
 
     </LinearLayout>
 
@@ -36,7 +38,7 @@
         android:id="@+id/pointshop_top_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="70dp"
         android:paddingLeft="20dp">
 
         <ImageView
@@ -49,7 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="상점을 검색해보세요"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/nanumsquareregular"/>
 
     </LinearLayout>
 
@@ -57,7 +60,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="610dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="130dp"
         app:layout_constraintTop_toBottomOf="@+id/pointshop_top_search">
 
         <LinearLayout
@@ -103,26 +106,31 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="가게 이름1"
+                        android:text="신선한 샐러드"
                         android:layout_marginLeft="10dp"
                         android:textSize="25sp"
                         android:layout_marginTop="10dp"
-                        android:textColor="#0075e1"/>
+                        android:textColor="#0075e1"
+                        android:fontFamily="@font/nanumsquareregular"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
-                        android:text="XXX 음식 구매시 10% 할인"/>
+                        android:text="찹 샐러드 구매 시 10% 할인"
+                        android:fontFamily="@font/nanumsquareregular"/>
 
                     <Button
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:text="100 포인트"
                         android:layout_marginTop="15dp"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"/>
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/nanumsquareregular"
+                        android:background="#6dbe45"
+                        android:textColor="#ffffff"/>
 
 
                 </LinearLayout>
@@ -136,7 +144,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="#f9f7f3">
+                android:background="#f9f7f3"
+                android:layout_marginTop="10dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="130dp"
@@ -149,7 +158,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@mipmap/sample_restaurant"
+                        android:src="@drawable/pointshop_grocery"
                         android:layout_gravity="center"
                         android:background="#ffffff"
                         android:scaleType="centerCrop"/>
@@ -166,26 +175,30 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="가게 이름1"
+                        android:text="우리 동네 대형마트"
                         android:layout_marginLeft="10dp"
                         android:textSize="25sp"
                         android:layout_marginTop="10dp"
-                        android:textColor="#0075e1"/>
+                        android:textColor="#0075e1"
+                        android:fontFamily="@font/nanumsquareregular"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
-                        android:text="XXX 음식 구매시 10% 할인"/>
+                        android:text="신선한 채소, 육류 항목 10% 할인 쿠폰"/>
 
                     <Button
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100 포인트"
+                        android:layout_height="40dp"
+                        android:text="80 포인트"
                         android:layout_marginTop="15dp"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"/>
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/nanumsquareregular"
+                        android:background="#6dbe45"
+                        android:textColor="#ffffff"/>
 
 
                 </LinearLayout>
@@ -199,7 +212,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="#f9f7f3">
+                android:background="#f9f7f3"
+                android:layout_marginTop="10dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="130dp"
@@ -212,7 +226,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@mipmap/sample_restaurant"
+                        android:src="@drawable/pointshop_mart"
                         android:layout_gravity="center"
                         android:background="#ffffff"
                         android:scaleType="centerCrop"/>
@@ -229,26 +243,30 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="가게 이름1"
+                        android:text="철수네 과일가게"
                         android:layout_marginLeft="10dp"
                         android:textSize="25sp"
                         android:layout_marginTop="10dp"
-                        android:textColor="#0075e1"/>
+                        android:textColor="#0075e1"
+                        android:fontFamily="@font/nanumsquareregular"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
-                        android:text="XXX 음식 구매시 10% 할인"/>
+                        android:text="제철 과일 구매시 5% 할인"/>
 
                     <Button
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100 포인트"
+                        android:layout_height="40dp"
+                        android:text="50 포인트"
                         android:layout_marginTop="15dp"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"/>
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/nanumsquareregular"
+                        android:background="#6dbe45"
+                        android:textColor="#ffffff"/>
 
 
                 </LinearLayout>
@@ -263,7 +281,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="#f9f7f3">
+                android:background="#f9f7f3"
+                android:layout_marginTop="10dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="130dp"
@@ -276,7 +295,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@mipmap/sample_restaurant"
+                        android:src="@drawable/pointshop_pizza"
                         android:layout_gravity="center"
                         android:background="#ffffff"
                         android:scaleType="centerCrop"/>
@@ -293,26 +312,30 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="가게 이름1"
+                        android:text="이탈리아 피자가게"
                         android:layout_marginLeft="10dp"
                         android:textSize="25sp"
                         android:layout_marginTop="10dp"
-                        android:textColor="#0075e1"/>
+                        android:textColor="#0075e1"
+                        android:fontFamily="@font/nanumsquareregular"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
-                        android:text="XXX 음식 구매시 10% 할인"/>
+                        android:text="페퍼로니 피자 구매시 5000원 할인"/>
 
                     <Button
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100 포인트"
+                        android:layout_height="40dp"
+                        android:text="150 포인트"
                         android:layout_marginTop="15dp"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"/>
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/nanumsquareregular"
+                        android:background="#6dbe45"
+                        android:textColor="#ffffff"/>
 
 
                 </LinearLayout>

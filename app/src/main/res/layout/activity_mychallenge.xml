@@ -28,7 +28,9 @@
             android:text="나의 도전과제"
             android:textAlignment="center"
             android:textSize="25dp"
-            android:layout_marginRight="60dp"/>
+            android:layout_marginRight="60dp"
+            android:paddingTop="13dp"
+            android:fontFamily="@font/nanumsquarebold"/>
 
     </LinearLayout>
 
@@ -83,17 +85,20 @@
                         android:id="@+id/challenge_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="과제이름"
+                        android:text="나만의 환경 지킴이 팁을 알려주세요!"
                         android:textAlignment="center"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:paddingTop="20dp"
-                        android:textColor="#0075e1"/>
+                        android:textColor="#0075e1"
+                        android:fontFamily="@font/nanumsquareregular"/>
 
                     <TextView
                         android:layout_margin="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="과제 설명"/>
+                        android:text="세상에는 환경을 지킬 수 있는 방법이 참 많아요! \n그 중 당신이 추천하는 가장 좋은 방법은 어떤 것이 있나요?"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/nanumsquareregular"/>
 
                     <Button
                         android:id="@+id/challenge_start"
@@ -102,7 +107,8 @@
                         android:text="완료하기"
                         android:layout_marginTop="15dp"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"/>
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/nanumsquareregular"/>
 
                 </LinearLayout>
 

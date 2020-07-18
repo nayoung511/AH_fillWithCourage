@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -17,7 +18,8 @@ import com.google.android.material.navigation.NavigationView;
 public class ChallengeDetailActivity extends AppCompatActivity {
     NavigationView navigationView;
     DrawerLayout drawerLayout;
-    ImageView btn_category;
+    Button btn_check_others;
+    Button participate_challenge;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -63,6 +65,21 @@ public class ChallengeDetailActivity extends AppCompatActivity {
         });
 
         //click시 이동
+        btn_check_others = findViewById(R.id.btn_check_others);
+        btn_check_others.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mystartActivity(ChallengeCheckActivity.class);
+            }
+        });
+
+        participate_challenge = findViewById(R.id.participate_challenge);
+        participate_challenge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mystartActivity(MyChallengeActivity.class);
+            }
+        });
 
     }
 

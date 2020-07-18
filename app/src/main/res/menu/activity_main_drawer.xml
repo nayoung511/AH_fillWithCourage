@@ -16,6 +16,7 @@
             android:id="@+id/nav_pointshop"
             android:icon="@drawable/ic_pointshop"
             android:title="포인트 상점" />
+
     </group>
 
     <item android:title="퍼스날">

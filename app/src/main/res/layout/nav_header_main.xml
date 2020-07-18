@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@drawable/side_nav_bar"
-    android:gravity="bottom"
+    android:background="@drawable/nav_back"
+    android:gravity="left"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -12,45 +12,63 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/nav_header_desc"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:elevation="10dp"
+        android:layout_gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:contentDescription="@string/nav_header_desc"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            app:srcCompat="@drawable/level_seed"/>
+    </androidx.cardview.widget.CardView>
+
+
 
     <TextView
         android:id="@+id/nav_user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:paddingTop="5dp"
         android:text="유저이름1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:fontFamily="@font/nanumsquarebold"
+        android:textSize="18sp"
+        />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="유저이메일" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
 
 
         <TextView
             android:id="@+id/user_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Level. 비기너" />
+            android:text="Level 씨앗"
+            android:textColor="#646464"
+            android:fontFamily="@font/nanumsquarebold"
+            android:textSize="15sp"/>
 
         <TextView
             android:id="@+id/user_exp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="83%"
-            android:paddingLeft="30dp"/>
+            android:text="현재 경험치 83%"
+            android:paddingLeft="20dp"
+            android:textColor="#646464"
+            android:fontFamily="@font/nanumsquarebold"
+            android:textSize="15sp"/>
     </LinearLayout>
 </LinearLayout>

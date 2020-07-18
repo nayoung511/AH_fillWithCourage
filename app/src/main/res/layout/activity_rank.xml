@@ -23,11 +23,13 @@
         <TextView
             android:id="@+id/title_rank_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="랭킹"
             android:textAlignment="center"
             android:textSize="25dp"
-            android:layout_marginRight="60dp"/>
+            android:layout_marginRight="60dp"
+            android:paddingTop="13dp"
+            android:fontFamily="@font/nanumsquarebold"/>
 
     </LinearLayout>
 

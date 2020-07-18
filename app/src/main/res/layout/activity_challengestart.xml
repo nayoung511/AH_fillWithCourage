@@ -26,9 +26,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="도전과제 완료하기"
-            android:textAlignment="center"
             android:textSize="25dp"
-            android:layout_marginRight="60dp"/>
+            android:textAlignment="center"
+            android:layout_marginRight="60dp"
+            android:paddingTop="13dp"
+            android:fontFamily="@font/nanumsquarebold"/>
 
     </LinearLayout>
 
@@ -38,7 +40,7 @@
         android:layout_height="wrap_content"
         android:text="도전과제를 완료하시려면 사진이나 동영상을\n예시 이미지처럼 올려주세요."
         android:textAlignment="center"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="70dp" />
 
     <LinearLayout
         android:id="@+id/sample_img"
@@ -52,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="도전과제 이름"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textAlignment="center"/>
 
         <ImageView
@@ -102,8 +104,13 @@
             <Button
                 android:id="@+id/btn_upload"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="제출하기"/>
+                android:layout_height="40dp"
+                android:text="제출하기"
+                android:fontFamily="@font/nanumsquareregular"
+                android:background="#77c78c"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp"
+                android:textSize="18sp" />
 
 
         </LinearLayout>
