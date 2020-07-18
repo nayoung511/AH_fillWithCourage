@@ -1,5 +1,6 @@
 package com.example.angelhack;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,6 +28,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
@@ -33,6 +36,8 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ChallengeStartActivity extends AppCompatActivity {
     private String ImagePath;
@@ -104,8 +109,9 @@ public class ChallengeStartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //파이어베이스에 사진 업로드
-                uploadImage();
+                uploadFile();
                 startToast("도전과제 제출 완료!");
+                mystartActivity(MyChallengeActivity.class);
             }
         });
 
@@ -238,6 +244,48 @@ public class ChallengeStartActivity extends AppCompatActivity {
                 }
                 break;
             }
+        }
+    }
+
+    //upload the file
+    private void uploadFile() {
+        //업로드할 파일이 있으면 수행
+        if (photoURI != null) {
+            //storage
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+
+            //Unique한 파일명을 만들자.
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMHH_mmss");
+            Date now = new Date();
+            String filename = formatter.format(now) + ".png";
+            //storage 주소와 폴더 파일명을 지정해 준다.
+            StorageReference storageRef = storage.getReferenceFromUrl("gs://angelhack-caa31.appspot.com").child("images/" + filename);
+            //올라가거라...
+            storageRef.putFile(photoURI)
+                    //성공시
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            Toast.makeText(getApplicationContext(), "업로드 완료!", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    //실패시
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getApplicationContext(), "업로드 실패!", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    //진행중
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                            @SuppressWarnings("VisibleForTests") //이걸 넣어 줘야 아랫줄에 에러가 사라진다. 넌 누구냐?
+                                    double progress = (100 * taskSnapshot.getBytesTransferred()) /  taskSnapshot.getTotalByteCount();
+                        }
+                    });
+        } else {
+            Toast.makeText(getApplicationContext(), "파일을 먼저 선택하세요.", Toast.LENGTH_SHORT).show();
         }
     }
 

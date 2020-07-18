@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
+    android:background="@drawable/main_background"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -21,17 +22,6 @@
             android:src="@drawable/ic_menu"
             android:layout_marginLeft="10dp"/>
 
-        <TextView
-            android:id="@+id/title_challenge_detail_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginRight="60dp"
-            android:text="용기를 담아"
-            android:textAlignment="center"
-            android:textSize="25dp"
-            android:paddingTop="10dp"/>
-
     </LinearLayout>
 
     <LinearLayout
@@ -44,9 +34,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="용기를 담아"
-            android:textSize="35sp"
+            android:textSize="50sp"
             android:textColor="#85DC40"
-            android:paddingLeft="20dp"/>
+            android:paddingLeft="20dp"
+            android:fontFamily="@font/nanumsquarebold"/>
 
         <ImageView
             android:layout_marginTop="30dp"
@@ -61,8 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:src="@mipmap/main_exp"
-            android:paddingLeft="20dp" />
-
+            android:layout_marginLeft="20dp" />
 
     </LinearLayout>
 
@@ -82,9 +72,14 @@
 
         <Button
             android:id="@+id/btn_register"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="회원가입"/>
+            android:text="회원가입"
+            android:fontFamily="@font/nanumsquareregular"
+            android:background="#6dbe45"
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
 
         <TextView
             android:layout_marginTop="20dp"
@@ -96,9 +91,14 @@
 
         <Button
             android:id="@+id/btn_login"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="로그인"/>
+            android:text="로그인"
+            android:fontFamily="@font/nanumsquareregular"
+            android:background="#6dbe45"
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
 
 
     </LinearLayout>

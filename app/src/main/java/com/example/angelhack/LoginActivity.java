@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAthu.getCurrentUser();
                                     startToast("로그인 성공했어요");
-                                    //mystartActivity(MemberinitActivity.class);
+                                    mystartActivity(ChallengeActivity.class);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     if (task.getException() != null) {
