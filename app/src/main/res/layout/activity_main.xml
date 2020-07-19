@@ -15,20 +15,13 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp">
 
-        <ImageView
-            android:id="@+id/btn_category"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_menu"
-            android:layout_marginLeft="10dp"/>
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="100dp">
+        android:paddingTop="80dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,9 +35,9 @@
         <ImageView
             android:layout_marginTop="30dp"
             android:id="@+id/app_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/logo2"
             android:layout_gravity="center"/>
 
         <ImageView
@@ -59,7 +52,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="530dp"
         android:orientation="vertical"
         android:gravity="center_horizontal">
 

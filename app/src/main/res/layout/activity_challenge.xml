@@ -50,19 +50,72 @@
             <LinearLayout
                 android:id="@+id/challenge_subbox"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:background="#f9f7f3"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/challenge_photo"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/sample_ecobag" />
+
+                <TextView
+                    android:id="@+id/challenge_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:paddingTop="20dp"
+                    android:text="대형마트에서 용기로 재료 사기"
+                    android:textAlignment="center"
+                    android:textColor="#0075e1"
+                    android:textSize="18sp"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/challenge_exp"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:text="대형마트에서 비닐봉지를 쓰지 않고 집에서 용기를 준비해 장을 보는 건 어떨까요? 에코백, 플라스틱 용기, 재활용 가능 한 것이면 뭐든지 좋아요"
+                    android:textAlignment="center"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/btn_participate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="자세히 보기"
+                    tools:ignore="DuplicateIds" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/challenge_subbox"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#f9f7f3">
+                android:background="#f9f7f3"
+                tools:ignore="DuplicateIds">
 
                 <ImageView
                     android:layout_width="300dp"
                     android:layout_height="200dp"
-                    android:src="@mipmap/green_earth"
+                    android:src="@drawable/sample_environment"
                     android:layout_gravity="center"/>
 
                 <TextView
+                    android:id="@+id/challenge_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="나만의 환경 지킴이 팁을 알려주세요!"
@@ -70,9 +123,11 @@
                     android:textSize="18sp"
                     android:paddingTop="20dp"
                     android:textColor="#0075e1"
-                    android:fontFamily="@font/nanumsquareregular"/>
+                    android:fontFamily="@font/nanumsquareregular"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
+                    android:id="@+id/challenge_exp"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
@@ -82,53 +137,10 @@
                     android:fontFamily="@font/nanumsquareregular"/>
 
                 <Button
+                    android:id="@+id/btn_participate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="참가하기"
-                    android:layout_marginTop="15dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="15dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/challenge_subbox_2"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="#f9f7f3"
-                android:layout_marginTop="15dp">
-
-                <ImageView
-                    android:layout_width="300dp"
-                    android:layout_height="200dp"
-                    android:src="@mipmap/green_earth"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="대형마트에서 용기로 재료 사기"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:paddingTop="20dp"
-                    android:textColor="#0075e1"
-                    android:fontFamily="@font/nanumsquareregular"/>
-
-                <TextView
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
-                    android:text="대형마트에서 비닐봉지를 쓰지 않고 집에서 용기를 준비해 장을 보는 건 어떨까요? 에코백, 플라스틱 용기, 재활용 가능 한 것이면 뭐든지 좋아요"
-                    android:fontFamily="@font/nanumsquareregular"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="참가하기"
+                    android:text="자세히 보기"
                     android:layout_marginTop="15dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="15dp"/>

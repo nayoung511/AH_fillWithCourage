@@ -1,12 +1,16 @@
 package com.example.angelhack;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.ByteArrayOutputStream;
 
 public class ChallengeDetailActivity extends AppCompatActivity {
     NavigationView navigationView;
@@ -64,12 +70,50 @@ public class ChallengeDetailActivity extends AppCompatActivity {
             }
         });
 
+        //intent (setting title, exp)
+
+        TextView challenge_title = findViewById(R.id.challenge_title);
+        final TextView challenge_exp = findViewById(R.id.challenge_exp);
+        ImageView challenge_photo = findViewById(R.id.challenge_photo);
+
+        Intent intent = getIntent();
+
+        String title = intent.getExtras().getString("challenge_title");
+        challenge_title.setText(title);
+
+        String exp = intent.getExtras().getString("challenge_exp");
+        challenge_exp.setText(exp);
+
+        Bundle extras = getIntent().getExtras();
+        final byte[] byteArray = getIntent().getByteArrayExtra("challenge_photo");
+        Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        challenge_photo.setImageBitmap(bitmap);
+
+
         //click시 이동
         btn_check_others = findViewById(R.id.btn_check_others);
         btn_check_others.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mystartActivity(ChallengeCheckActivity.class);
+                //Define title, exp, image
+                final TextView challenge_title = findViewById(R.id.challenge_title);
+                final TextView challenge_exp = findViewById(R.id.challenge_exp);
+                final ImageView challenge_photo = findViewById(R.id.challenge_photo);
+
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                Bitmap bitmap = ((BitmapDrawable)challenge_photo.getDrawable()).getBitmap();
+                float scale = (float)(1024/(float)bitmap.getWidth());
+                int image_w = (int)(bitmap.getWidth()*scale);
+                int image_h = (int)(bitmap.getHeight()*scale);
+                Bitmap resize= Bitmap.createScaledBitmap(bitmap, image_w, image_h,true);
+                resize.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                final byte[] byteArray = stream.toByteArray();
+
+                Intent intent = new Intent(getApplicationContext(), ChallengeCheckActivity.class);
+                intent.putExtra("challenge_title", challenge_title.getText().toString());
+                intent.putExtra("challenge_exp", challenge_exp.getText().toString());
+                intent.putExtra("challenge_photo", byteArray);
+                startActivity(intent);
             }
         });
 
@@ -77,7 +121,24 @@ public class ChallengeDetailActivity extends AppCompatActivity {
         participate_challenge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mystartActivity(MyChallengeActivity.class);
+                final TextView challenge_title = findViewById(R.id.challenge_title);
+                final TextView challenge_exp = findViewById(R.id.challenge_exp);
+                final ImageView challenge_photo = findViewById(R.id.challenge_photo);
+
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                Bitmap bitmap = ((BitmapDrawable)challenge_photo.getDrawable()).getBitmap();
+                float scale = (float)(1024/(float)bitmap.getWidth());
+                int image_w = (int)(bitmap.getWidth()*scale);
+                int image_h = (int)(bitmap.getHeight()*scale);
+                Bitmap resize= Bitmap.createScaledBitmap(bitmap, image_w, image_h,true);
+                resize.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                final byte[] byteArray = stream.toByteArray();
+
+                Intent intent = new Intent(getApplicationContext(), MyChallengeActivity.class);
+                intent.putExtra("challenge_title", challenge_title.getText().toString());
+                intent.putExtra("challenge_exp", challenge_exp.getText().toString());
+                intent.putExtra("challenge_photo", byteArray);
+                startActivity(intent);
             }
         });
 

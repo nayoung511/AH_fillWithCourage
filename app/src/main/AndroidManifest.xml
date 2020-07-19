@@ -39,6 +39,12 @@
         <activity
             android:name=".ChallengeSuccessPopUp"
             android:theme="@android:style/Theme.Dialog"/>
+        <activity
+            android:name=".ChallengeCheckSuccessPopUp"
+            android:theme="@android:style/Theme.Dialog"/>
+        <activity
+            android:name=".ChallengeCheckFailPopUp"
+            android:theme="@android:style/Theme.Dialog"/>
     </application>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

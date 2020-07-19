@@ -25,7 +25,7 @@
             android:id="@+id/title_challenge_detail_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="도전과제 이름"
+            android:text="도전과제 상세 보기"
             android:textAlignment="center"
             android:textSize="25dp"
             android:layout_marginRight="60dp"
@@ -55,6 +55,7 @@
                 android:background="#f9f7f3">
 
                 <TextView
+                    android:id="@+id/challenge_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="도전과제 이름"
@@ -64,35 +65,34 @@
                     android:paddingLeft="10dp"/>
 
                 <TextView
+                    android:id="@+id/challenge_exp"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="15dp"
+                    android:paddingLeft="10dp" />
+                <TextView
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginTop="15dp"
                     android:paddingLeft="10dp"
-                    android:text="도전과제 설명\n아래 이미지처럼 사진 업로드 시 합격!"/>
+                    android:text="아래 이미지처럼 사진 업로드 시 합격!"/>
 
                 <ImageView
-                    android:id="@+id/exp_img"
+                    android:id="@+id/challenge_photo"
                     android:layout_width="300dp"
                     android:layout_height="200dp"
                     android:src="@mipmap/green_earth"
                     android:layout_gravity="center"/>
 
-                <TextView
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:layout_marginTop="15dp"
-                    android:paddingLeft="10dp"
-                    android:text="도전과제 설명\n아래 이미지처럼 사진 업로드 시 합격!"/>
 
                 <LinearLayout
                     android:id="@+id/participant_challenge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
-                    android:paddingTop="10dp"
+                    android:paddingTop="20dp"
                     android:gravity="center_vertical">
 
                     <ImageView
@@ -110,11 +110,11 @@
                         android:id="@+id/btn_check_others"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:text="검사하기"
                         android:layout_marginLeft="100dp"
-                        android:fontFamily="@font/nanumsquareregular"
                         android:background="#77c78c"
-                        android:textColor="#ffffff"/>
+                        android:fontFamily="@font/nanumsquareregular"
+                        android:text="검사하기"
+                        android:textColor="#ffffff" />
 
 
                 </LinearLayout>
@@ -139,13 +139,15 @@
                         android:paddingLeft="10dp"/>
 
                     <Button
+                        android:id="@+id/btn_check_others"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:text="검사하기"
                         android:layout_marginLeft="100dp"
                         android:fontFamily="@font/nanumsquareregular"
                         android:background="#77c78c"
-                        android:textColor="#ffffff"/>
+                        android:textColor="#ffffff"
+                        tools:ignore="DuplicateIds" />
 
 
                 </LinearLayout>

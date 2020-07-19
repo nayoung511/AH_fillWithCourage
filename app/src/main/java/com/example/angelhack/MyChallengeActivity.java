@@ -1,12 +1,17 @@
 package com.example.angelhack;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.ByteArrayOutputStream;
 
 public class MyChallengeActivity extends AppCompatActivity {
     NavigationView navigationView;
@@ -37,6 +44,47 @@ public class MyChallengeActivity extends AppCompatActivity {
                 }
             }
         });
+
+        final TextView challenge_title = findViewById(R.id.challenge_title);
+        final TextView challenge_exp = findViewById(R.id.challenge_exp);
+        ImageView challenge_photo = findViewById(R.id.challenge_photo);
+
+        Intent intent = getIntent();
+
+        String title = intent.getExtras().getString("challenge_title");
+        challenge_title.setText(title);
+
+        String exp = intent.getExtras().getString("challenge_exp");
+        challenge_exp.setText(exp);
+
+        Bundle extras = getIntent().getExtras();
+        byte[] byteArray = getIntent().getByteArrayExtra("challenge_photo");
+        Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        challenge_photo.setImageBitmap(bitmap);
+
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap = ((BitmapDrawable)challenge_photo.getDrawable()).getBitmap();
+        float scale = (float)(1024/(float)bitmap.getWidth());
+        int image_w = (int)(bitmap.getWidth()*scale);
+        int image_h = (int)(bitmap.getHeight()*scale);
+        Bitmap resize= Bitmap.createScaledBitmap(bitmap, image_w, image_h,true);
+        resize.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        byteArray = stream.toByteArray();
+
+        //도전하기 버튼 클릭 시 이동
+        challenge_start = findViewById(R.id.challenge_start);
+        final byte[] finalByteArray = byteArray;
+        challenge_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ChallengeStartActivity.class);
+                intent.putExtra("challenge_title", challenge_title.getText().toString());
+                intent.putExtra("challenge_photo", finalByteArray);
+                startActivity(intent);
+            }
+        });
+
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -64,14 +112,6 @@ public class MyChallengeActivity extends AppCompatActivity {
             }
         });
 
-    //도전하기 버튼 클릭 시 이동
-        challenge_start = findViewById(R.id.challenge_start);
-        challenge_start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mystartActivity(ChallengeStartActivity.class);
-            }
-        });
     }
 
     public void mOnPopupClick(View view){

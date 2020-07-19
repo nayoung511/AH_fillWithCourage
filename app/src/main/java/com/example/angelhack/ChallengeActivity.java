@@ -1,12 +1,16 @@
 package com.example.angelhack;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.ByteArrayOutputStream;
 
 public class ChallengeActivity extends AppCompatActivity {
     NavigationView navigationView;
@@ -64,14 +70,42 @@ public class ChallengeActivity extends AppCompatActivity {
             }
         });
 
-        //click시 이동
+        //Define title, exp, image
+        final TextView challenge_title = findViewById(R.id.challenge_title);
+        final TextView challenge_exp = findViewById(R.id.challenge_exp);
+        final ImageView challenge_photo = findViewById(R.id.challenge_photo);
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        Bitmap bitmap = ((BitmapDrawable)challenge_photo.getDrawable()).getBitmap();
+        float scale = (float)(1024/(float)bitmap.getWidth());
+        int image_w = (int)(bitmap.getWidth()*scale);
+        int image_h = (int)(bitmap.getHeight()*scale);
+        Bitmap resize= Bitmap.createScaledBitmap(bitmap, image_w, image_h,true);
+        resize.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        final byte[] byteArray = stream.toByteArray();
 
         //LinearView click시 이동
         LinearLayout challenge_subbox = findViewById(R.id.challenge_subbox);
         challenge_subbox.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mystartActivity(ChallengeDetailActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ChallengeDetailActivity.class);
+                intent.putExtra("challenge_title", challenge_title.getText().toString());
+                intent.putExtra("challenge_exp", challenge_exp.getText().toString());
+                intent.putExtra("challenge_photo", byteArray);
+                startActivity(intent);
+            }
+        });
+
+        Button btn_participate = findViewById(R.id.btn_participate);
+        btn_participate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ChallengeDetailActivity.class);
+                intent.putExtra("challenge_title", challenge_title.getText().toString());
+                intent.putExtra("challenge_exp", challenge_exp.getText().toString());
+
+                startActivity(intent);
             }
         });
 

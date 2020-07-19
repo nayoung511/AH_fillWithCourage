@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,14 +16,18 @@ public class ChallengeCheckActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challengecheck);
 
-        ImageView user_upload_image = findViewById(R.id.user_upload_image);
+        TextView challenge_title = findViewById(R.id.challenge_title);
+        Intent intent = getIntent();
+
+        String title = intent.getExtras().getString("challenge_title");
+        challenge_title.setText(title);
 
         Button btn_success = findViewById(R.id.btn_success);
         btn_success.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startToast("성공했군요!");
-                mystartActivity(ChallengeActivity.class);
+                mystartActivity(ChallengeCheckSuccessPopUp.class);
+
             }
         });
 
@@ -30,8 +35,7 @@ public class ChallengeCheckActivity extends AppCompatActivity {
         btn_fail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startToast("실패했군요 ㅠㅠ");
-                mystartActivity(ChallengeActivity.class);
+                mystartActivity(ChallengeCheckFailPopUp.class);
             }
         });
     }

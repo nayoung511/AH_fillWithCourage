@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -50,13 +52,26 @@ public class ChallengeStartActivity extends AppCompatActivity {
 
     NavigationView navigationView;
     DrawerLayout drawerLayout;
-    ImageView user_upload_image;
+    ImageView my_challenge_photo;
     Button btn_upload;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challengestart);
+
+        TextView challenge_title = findViewById(R.id.challenge_title);
+        ImageView challenge_photo = findViewById(R.id.challenge_photo);
+
+        Intent intent = getIntent();
+
+        String title = intent.getExtras().getString("challenge_title");
+        challenge_title.setText(title);
+
+        Bundle extras = getIntent().getExtras();
+        final byte[] byteArray = getIntent().getByteArrayExtra("challenge_photo");
+        Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        challenge_photo.setImageBitmap(bitmap);
 
         //category
         ImageView btn_category = findViewById(R.id.btn_category);
@@ -97,8 +112,8 @@ public class ChallengeStartActivity extends AppCompatActivity {
         });
 
 
-        user_upload_image = findViewById(R.id.user_upload_image);
-        user_upload_image.setOnClickListener(new View.OnClickListener() {
+        my_challenge_photo = findViewById(R.id.my_challenge_photo);
+        my_challenge_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 imgDialog();
@@ -226,7 +241,7 @@ public class ChallengeStartActivity extends AppCompatActivity {
                         albumURI = Uri.fromFile(albumFile);
                         galleryAddPic();
                         //프로필 이미지에 띄우기
-                        user_upload_image.setImageURI(photoURI);
+                        my_challenge_photo.setImageURI(photoURI);
                     }catch (Exception e){
                         e.printStackTrace();
                         Log.e("profileAct", "에러났어요.");
@@ -240,7 +255,7 @@ public class ChallengeStartActivity extends AppCompatActivity {
                 try{
                     galleryAddPic();
                     //프로필 이미지에 띄우기
-                    user_upload_image.setImageURI(imgUri);
+                    my_challenge_photo.setImageURI(imgUri);
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -306,9 +321,9 @@ public class ChallengeStartActivity extends AppCompatActivity {
         user_upload_img.getName().equals(user_upload_img_challenge.getName());
         user_upload_img.getPath().equals(user_upload_img_challenge.getPath());
 
-        user_upload_image.setDrawingCacheEnabled(true);
-        user_upload_image.buildDrawingCache();
-        Bitmap bitmap = ((BitmapDrawable)user_upload_image.getDrawable()).getBitmap();
+        my_challenge_photo.setDrawingCacheEnabled(true);
+        my_challenge_photo.buildDrawingCache();
+        Bitmap bitmap = ((BitmapDrawable)my_challenge_photo.getDrawable()).getBitmap();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] data = baos.toByteArray();

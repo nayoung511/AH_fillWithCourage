@@ -51,6 +51,7 @@
         android:layout_marginTop="120dp">
 
         <TextView
+            android:id="@+id/challenge_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="도전과제 이름"
@@ -59,10 +60,10 @@
 
         <ImageView
             android:layout_marginTop="10dp"
-            android:id="@+id/sample_img_check"
+            android:id="@+id/challenge_photo"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@mipmap/sample_challenge_img" />
+            android:src="@drawable/sample_ecobag" />
 
     </LinearLayout>
 
@@ -89,10 +90,10 @@
 
         <ImageView
             android:layout_marginTop="10dp"
-            android:id="@+id/user_upload_image"
+            android:id="@+id/my_challenge_photo"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@mipmap/sample_challenge_img" />
+            android:src="@drawable/upload_challenge" />
 
 
         <LinearLayout
