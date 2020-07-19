@@ -46,6 +46,7 @@ public class ChallengeStartActivity extends AppCompatActivity {
     private static final int FROM_CAMERA = 0;
     private static final int FROM_ALBUM = 1;
     int flag;
+    int check_success;
 
     NavigationView navigationView;
     DrawerLayout drawerLayout;
@@ -110,8 +111,9 @@ public class ChallengeStartActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //파이어베이스에 사진 업로드
                 uploadFile();
-                startToast("도전과제 제출 완료!");
-                mystartActivity(MyChallengeActivity.class);
+                if(check_success != 1) {
+                    startToast("도전과제 제출 완료!");
+                    mystartActivity(ChallengeSuccessPopUp.class);}
             }
         });
 
@@ -267,6 +269,7 @@ public class ChallengeStartActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             Toast.makeText(getApplicationContext(), "업로드 완료!", Toast.LENGTH_SHORT).show();
+                            check_success = 0;
                         }
                     })
                     //실패시
@@ -286,6 +289,7 @@ public class ChallengeStartActivity extends AppCompatActivity {
                     });
         } else {
             Toast.makeText(getApplicationContext(), "파일을 먼저 선택하세요.", Toast.LENGTH_SHORT).show();
+            check_success = 1;
         }
     }
 
@@ -338,6 +342,12 @@ public class ChallengeStartActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void mOnPopupClick(View view){
+        Intent intent = new Intent(this, ChallengeSuccessPopUp.class);
+        intent.putExtra("data", "+5 포인트");
+        startActivityForResult(intent, 1);
     }
 
 

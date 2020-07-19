@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity{
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startToast("로그인 액티비티");
                 mystartActivity(LoginActivity.class);
                 finish();
             }
@@ -61,7 +60,6 @@ public class MainActivity extends AppCompatActivity{
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startToast("회원가입 액티비티");
                 mystartActivity(RegisterActivity.class);
                 finish();
             }

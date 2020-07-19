@@ -74,6 +74,22 @@ public class MyChallengeActivity extends AppCompatActivity {
         });
     }
 
+    public void mOnPopupClick(View view){
+        Intent intent = new Intent(this, ChallengeSuccessPopUp.class);
+        intent.putExtra("data", "+5 포인트");
+        startActivityForResult(intent, 1);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                String result = data.getStringExtra("result");
+            }
+        }
+    }
+
     private void startToast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }

@@ -110,7 +110,8 @@
                 android:background="#77c78c"
                 android:textColor="#ffffff"
                 android:layout_marginLeft="10dp"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:onClick="mOnPopupClick"/>
 
 
         </LinearLayout>

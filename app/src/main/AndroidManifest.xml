@@ -30,6 +30,15 @@
         <activity android:name=".RankingActivity"/>
         <activity android:name=".ChallengeDetailActivity"/>
         <activity android:name=".ChallengeCheckActivity"/>
+
+        <!--popup-->
+
+        <activity
+            android:name=".PointShopBuyPopUp"
+            android:theme="@android:style/Theme.Dialog"/>
+        <activity
+            android:name=".ChallengeSuccessPopUp"
+            android:theme="@android:style/Theme.Dialog"/>
     </application>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
